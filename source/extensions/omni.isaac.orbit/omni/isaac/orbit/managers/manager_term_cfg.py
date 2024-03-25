@@ -223,6 +223,13 @@ class RandomizationTermCfg(EventTermCfg):
 
 
 @configclass
+class RewardGroupCfg:
+    # Reserved for future use.
+    # No parameters, yet.
+    pass
+
+
+@configclass
 class RewardTermCfg(ManagerTermBaseCfg):
     """Configuration for a reward term."""
 
