@@ -30,7 +30,7 @@ class EventCfg:
         func=mdp.randomize_rigid_body_material,
         mode="reset",
         params={
-            "asset_cfg": SceneEntityCfg("robot", body_names=".*"),
+            "asset_cfg": SceneEntityCfg("robot"),
             "static_friction_range": (0.7, 1.3),
             "dynamic_friction_range": (1.0, 1.0),
             "restitution_range": (1.0, 1.0),
@@ -76,7 +76,7 @@ class EventCfg:
         func=mdp.randomize_rigid_body_material,
         mode="reset",
         params={
-            "asset_cfg": SceneEntityCfg("object", body_names=".*"),
+            "asset_cfg": SceneEntityCfg("object"),
             "static_friction_range": (0.7, 1.3),
             "dynamic_friction_range": (1.0, 1.0),
             "restitution_range": (1.0, 1.0),
@@ -261,6 +261,7 @@ class ShadowHandOpenAIEnvCfg(ShadowHandEnvCfg):
     force_torque_obs_scale = 10.0
     # domain randomization config
     events: EventCfg = EventCfg()
+    min_randomization_freq_s = 10.0
     # at every time-step add gaussian noise + bias. The bias is a gaussian sampled at reset
     action_noise_model: NoiseModelWithAdditiveBiasCfg = NoiseModelWithAdditiveBiasCfg(
         noise_cfg=GaussianNoiseCfg(mean=0.0, std=0.05, operation="add"),
