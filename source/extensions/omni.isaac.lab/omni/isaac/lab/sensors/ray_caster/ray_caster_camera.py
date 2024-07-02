@@ -357,6 +357,7 @@ class RayCasterCamera(RayCaster):
         self._data.intrinsic_matrices[:, 0, 2] = c_x
         self._data.intrinsic_matrices[:, 1, 1] = f_y
         self._data.intrinsic_matrices[:, 1, 2] = c_y
+
         # save focal length
         self._focal_length = pattern_cfg.focal_length
 
